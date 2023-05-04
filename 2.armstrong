@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int check_armstrongnum(int num)
+{
+	if(num>0)
+	return(pow(num%10,3)+check_armstrongnum(num/10));
+}
+int main()
+{
+	int num;
+	printf("enter a number:");
+	scanf("%d",&num);
+	if(check_armstrongnum(num)==num)
+	printf("it is armstrong number");
+	else
+	printf("it is not a armstrong number");
+}
