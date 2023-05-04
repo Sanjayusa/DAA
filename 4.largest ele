@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int largest(int list[], int lower, int upper);
+
+int main()
+{
+    int array[10] = { 23, 43, 35, 38, 67, 12, 76, 10, 34, 8 };
+    
+    printf("The largest element in array: %d", largest(array, 0, 9));
+    return 0;
+}
+
+int largest(int list[], int lower, int upper)
+{
+    int max;
+    if (lower == upper)
+        return list[lower];
+    else
+    {
+        max = largest(list, lower + 1, upper);
+ 
+        if (list[lower] >= max)
+            return list[lower];
+        else
+            return max;
+    }
+}
